@@ -50,8 +50,8 @@ const SignInPopup: React.FC<ISignInPopupProps> = ({ onSignUpClickCallback }): Re
                 </form>
             </div>
 
-            <p className="signup-text" onClick={onSignUpClickCallback}>
-                Do not have an account? <span>Sign Up</span>
+            <p className="signup-text">
+                Do not have an account? <span onClick={onSignUpClickCallback}>Sign Up</span>
             </p>
         </div>
     );
