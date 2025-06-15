@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react'
 import FooRumIcon from '../../assets/foo-rum-icon.svg'
 import LoginIcon from '../../assets/login-icon.svg'
-import { AppPages, useAppData } from '../../store'
+import { useAppData } from '../../store'
 import './styles.scss'
+import { AppPages } from '../../util/enums'
 
 const AppHeader = () => {
 

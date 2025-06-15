@@ -14,39 +14,8 @@ import CameraIcon from '../assets/camera-icon.svg'
 import FeedOneThumb from '../assets/feed-1-thumb.svg';
 import FeedTwoThumb from '../assets/feed-2-thumb.svg';
 import FeedThreeThumb from '../assets/feed-3-thumb.svg';
-
-export enum InputStatus {
-    ACTIVE,
-    INACTIVE
-}
-
-export enum FooterActions {
-    LIKE,
-    COMMENT,
-    SHARE
-}
-
-export enum InputActions {
-    BOLD,
-    ITALIC,
-    UNDERLINE,
-    ORDERED_LIST,
-    UNORDERED_LIST,
-    QUOTE,
-    SCRIPT,
-    DIVIDER,
-    ADD_FILES,
-    MICROPHONE,
-    CAMERA
-}
-
-export interface InputAction {
-    id: InputActions | FooterActions,
-    action: InputActions | FooterActions,
-    icon?: string,
-    status?: InputStatus,
-    title: string,
-}
+import { InputActions, InputStatus, FooterActions } from './enums'
+import { InputAction, IFeedTileProps, IUserCredentials } from './interfaces'
 
 export const INPUT_ACTIONS: Array<InputAction> = [
     {
@@ -126,6 +95,7 @@ export const STATUS_TILE_FOOTER_ACTIONS: Array<InputAction> = [
     },
 ]
 
+
 export const EMOTICONS_LIST: Array<string> = ["😄", "🙃", "🥰", "😛"];
 
 export const USER_THUMBNAILS: Array<string> = [FeedOneThumb, FeedTwoThumb, FeedThreeThumb]
@@ -151,7 +121,37 @@ export const FEED_TILE_FOOTER_ACTIONS: Array<InputAction> = [
     },
 ]
 
-export enum PopupTypes {
-    SIGN_IN = 'SIGN_IN',
-    SIGN_UP = 'SIGN_UP',
-}
+export const DEFAULT_FEED_STATE: Array<IFeedTileProps> = [
+    {
+        userThumbnail: FeedOneThumb,
+        username: "Theresa Webb",
+        statusUpdatedAt: "5 mins ago",
+        statusEmoticon: "🥴",
+        textContent: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`
+    },
+    {
+        userThumbnail: FeedTwoThumb,
+        username: "John Doe",
+        statusUpdatedAt: "5 mins ago",
+        statusEmoticon: "🤞",
+        textContent: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`
+    },
+    {
+        userThumbnail: FeedThreeThumb,
+        username: "Jane Doe",
+        statusUpdatedAt: "5 mins ago",
+        statusEmoticon: "💀",
+        textContent: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`
+    },
+];
+
+export const USER_DATA: Array<IUserCredentials> = [
+    {
+        username: 'demo@example.com',
+        password: 'password123'
+    },
+    {
+        username: 'test@user.com',
+        password: 'testpass',
+    }
+];

@@ -4,8 +4,9 @@ import AppFeed from '../../components/AppFeed'
 import './styles.scss'
 import SignInPopup from '../../components/SignInPopup'
 import SignUpPopup from '../../components/SignUpPopup'
-import { AppPages, useAppData } from '../../store'
+import { useAppData } from '../../store'
 import SignInPage from '../SignIn'
+import { AppPages } from '../../util/enums'
 
 const AppContainer = () => {
 

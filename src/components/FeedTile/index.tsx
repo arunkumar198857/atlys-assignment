@@ -1,7 +1,8 @@
 import React from 'react'
 import './styles.scss'
-import { IFeedTileProps, useAppData } from '../../store'
-import { FEED_TILE_FOOTER_ACTIONS, InputAction } from '../../util/constants';
+import { useAppData } from '../../store'
+import { FEED_TILE_FOOTER_ACTIONS } from '../../util/constants';
+import { IFeedTileProps, InputAction } from '../../util/interfaces';
 
 const FeedTile: React.FC<IFeedTileProps> = ({
     userThumbnail,

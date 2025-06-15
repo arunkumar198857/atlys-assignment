@@ -1,21 +1,29 @@
 import React, { useState } from 'react'
-import { IFeedTileProps, useAppData } from '../../store'
+import { useAppData } from '../../store'
 import { getRandomElement } from '../../util/helper'
 import './styles.scss'
-import { EMOTICONS_LIST, INPUT_ACTIONS, InputAction, InputActions, InputStatus, STATUS_TILE_FOOTER_ACTIONS, USER_THUMBNAILS } from '../../util/constants'
 import ChevronIcon from '../../assets/chevron-icon.svg'
 import DeleteIcon from '../../assets/delete-icon.svg'
 import EmoticonIcon from '../../assets/emoticon-icon.svg'
 import SendIcon from '../../assets/send-icon.svg'
+import { USER_THUMBNAILS, EMOTICONS_LIST, INPUT_ACTIONS, STATUS_TILE_FOOTER_ACTIONS } from '../../util/constants'
+import { InputStatus, InputActions } from '../../util/enums'
+import { IFeedTileProps, InputAction } from '../../util/interfaces'
 
 
 const StatusTile = () => {
 
-  const { setFeedData, userEmail, handleInteraction } = useAppData();
+  const { setFeedData, userEmail, handleInteraction, isUserAuthenticated } = useAppData();
 
   const [textContent, setTextContent] = useState<string>('');
 
   const addStatusToFeed = (e: React.MouseEvent<HTMLDivElement>) => {
+
+    if(!isUserAuthenticated){
+      alert('Please signup/login to update status');
+      return;
+    }
+
     e?.stopPropagation();
     if (textContent?.length > 0) {
       const dataToSendToFeed = {

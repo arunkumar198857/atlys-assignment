@@ -3,24 +3,9 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 import FeedOneThumb from '../assets/feed-1-thumb.svg';
 import FeedTwoThumb from '../assets/feed-2-thumb.svg';
 import FeedThreeThumb from '../assets/feed-3-thumb.svg';
-
-export interface IFeedTileProps {
-    userThumbnail?: string;
-    username: string;
-    statusUpdatedAt: string;
-    statusEmoticon: string;
-    textContent: string;
-}
-
-export enum AppPages {
-    FEED,
-    LOGIN
-}
-
-interface IUserCredentials {
-    username: string;
-    password: string;
-}
+import { DEFAULT_FEED_STATE, USER_DATA } from '../util/constants';
+import { AppPages } from '../util/enums';
+import { IFeedTileProps, IUserCredentials } from '../util/interfaces';
 
 // Define types for your data
 type AppData = {
@@ -42,47 +27,12 @@ type AppData = {
     handleInteraction: () => void;
 };
 
-const DEFAULT_STATE: Array<IFeedTileProps> = [
-    {
-        userThumbnail: FeedOneThumb,
-        username: "Theresa Webb",
-        statusUpdatedAt: "5 mins ago",
-        statusEmoticon: "🥴",
-        textContent: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`
-    },
-    {
-        userThumbnail: FeedTwoThumb,
-        username: "John Doe",
-        statusUpdatedAt: "5 mins ago",
-        statusEmoticon: "🤞",
-        textContent: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`
-    },
-    {
-        userThumbnail: FeedThreeThumb,
-        username: "Jane Doe",
-        statusUpdatedAt: "5 mins ago",
-        statusEmoticon: "💀",
-        textContent: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`
-    },
-];
-
-const USER_DATA: Array<IUserCredentials> = [
-    {
-        username: 'demo@example.com',
-        password: 'password123'
-    },
-    {
-        username: 'test@user.com',
-        password: 'testpass',
-    }
-];
-
 // Create context with default empty values
 const AppDataContext = createContext<AppData | undefined>(undefined);
 
 // Provider component
 export const AppDataProvider = ({ children }: { children: ReactNode }) => {
-    const [feedData, setFeedData] = useState<Array<IFeedTileProps>>(DEFAULT_STATE);
+    const [feedData, setFeedData] = useState<Array<IFeedTileProps>>(DEFAULT_FEED_STATE);
     const [isUserAuthenticated, setIsUserAuthenticated] = useState<boolean>(false);
     const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState<boolean>(false);
     const [isSignInPopupOpen, setIsSignInPopupOpen] = useState<boolean>(false);

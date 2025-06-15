@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import './styles.scss';
 import LoginIconSVG from '../../assets/login-icon.svg'
-import { AppPages, useAppData } from '../../store';
+import { useAppData } from '../../store';
+import { AppPages } from '../../util/enums';
 
 interface ISignInPopupProps {
     onSignInClickCallback: () => void;

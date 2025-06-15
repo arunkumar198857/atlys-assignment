@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Atlys Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Test login credentials
+
+demo@example.com / password123
+test@user.com / testpass
 
 ## Available Scripts
 

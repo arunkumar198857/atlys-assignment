@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SignInPopup from '../../components/SignInPopup';
 import './styles.scss';
 import SignUpPopup from '../../components/SignUpPopup';
-import { PopupTypes } from '../../util/constants';
+import { PopupTypes } from '../../util/enums';
 
 const SignInPage = () => {
 
