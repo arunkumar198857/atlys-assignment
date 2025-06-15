@@ -1,0 +1,128 @@
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.45);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.signup-card {
+    background-color: rgba(235, 235, 235, 1);
+    border-radius: 16px;
+    padding: 11px;
+    width: 498px;
+    height: 653px;
+    top: 167px;
+    left: 507px;
+    border-radius: 30px;
+    box-shadow: 0 0 0 1px #e6e6e6, 0 10px 20px rgba(0, 0, 0, 0.04);
+    text-align: center;
+}
+
+.white-content {
+    width: 476px;
+    height: 583px;
+    border-radius: 21px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.03);
+    padding: 30px 50px 50px 50px;
+}
+
+.signup-icon {
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.48);
+    margin-bottom: 64px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    label {
+        font-size: 14px;
+        margin-bottom: 6px;
+        font-weight: 600;
+    }
+
+    input {
+        padding: 12px 14px;
+        margin-bottom: 14px;
+        border: 1px solid #ddd;
+        border-radius: 11px;
+        font-size: 14px;
+        line-height: 21px;
+        font-weight: 400;
+        outline: none;
+        background-color: rgba(244, 244, 244, 1);
+
+        &:focus {
+            border-color: rgba(80, 87, 234, 1);
+        }
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.48);
+            font-size: 14px;
+            line-height: 21px;
+        }
+    }
+
+    .sign-up-btn {
+        margin-top: 8px;
+        padding: 0.75rem;
+        background-color: rgba(80, 87, 234, 1);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #4338ca;
+        }
+    }
+}
+
+.signin-text {
+    margin-top: 17px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.6);
+
+    a {
+        color: rgba(80, 87, 234, 1);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

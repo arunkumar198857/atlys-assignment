@@ -1,0 +1,188 @@
+.status-tile-container {
+    height: 224px;
+    width: 568px;
+    border-radius: 21px;
+    background-color: rgba(0, 0, 0, 0.03);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideFromRight 0.2s ease-out forwards;
+}
+
+.status-tile {
+    width: 554px;
+    height: 210px;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+    background-color: #FFF;
+
+    &__header {
+        padding: 9px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .header-actions {
+            background-color: rgba(0, 0, 0, 0.03);
+            border-radius: 10px;
+            padding: 4px;
+            width: 414px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .paragraph-dd {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px;
+                width: 94px;
+                height: 32px;
+                background-color: #fff;
+                gap: 11px;
+                border-radius: 7px;
+
+                .title-container {
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .input-actions {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                height: 32px;
+                gap: 18px;
+                width: 278px;
+
+                .input-action {
+                    &.active {
+                        height: 32px;
+                        width: 32px;
+                        background-color: #fff;
+                        border-radius: 7px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-right: -9px;
+                    }
+
+                    &.inactive {
+                        padding-top: 4px;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .delete-action {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 0, 0, 0.15);
+            border-radius: 10px;
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(255, 0, 0, 0.2);
+                transition: all 0.15s ease-in-out;
+            }
+        }
+    }
+
+    &__input {
+        margin-top: 5px;
+        padding: 0 9px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 7px;
+        height: 100px;
+
+        .icon-container {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        
+        .text-area-container {
+            padding-top: 2px;
+            width: 100%;
+            .custom-text-area {
+                height: 90px;
+                width: 100%;
+                border: none;
+                outline: none;
+                resize: none;
+                font-family: "Inter", sans-serif;
+            }
+        }
+    }
+
+    &__footer {
+        border-top: 1px solid rgba(217, 217, 217, 1);
+        height: 46px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 9px;
+
+        .footer-actions {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 30px;
+            gap: 12px;
+
+            .footer-action {
+                &.active {
+                    height: 30px;
+                    width: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(0, 0, 0, 0.06);
+                    border-radius: 10px;
+                }
+
+                &.inactive {
+                    padding-top: 7px;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.05);
+                    transition: transform 0.15s ease-in-out;
+                }
+            }
+        }
+
+        .post-action {
+            padding: 3px 9px;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.05);
+                transition: all 0.15s ease-in-out;
+            }
+        }
+
+    }
+}
+
+.vertical-divider {
+    height: 32px;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
